@@ -16,7 +16,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <section className="mx-auto p-12">
+          {children}
+        </section>
+        <footer>
+          <p className="text-center text-sm text-gray-500">@ 2024</p>
+        </footer>
+      </body>
     </html>
   );
 }
