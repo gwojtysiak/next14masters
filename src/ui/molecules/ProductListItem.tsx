@@ -1,18 +1,16 @@
-import { type ProductItemType } from "../types";
+import { type Product } from "@/types/product";
 import { ProductCoverImage } from "@/ui/atoms/ProductCoverImage";
-import { ProductListItemDescription } from "@/ui/atoms/ProductListItemDescription";
+import { ProductDescription } from "@/ui/atoms/ProductDescription";
 
 type ProductListItemProps = {
-	product: ProductItemType;
+	product: Product;
 };
 
-export const ProductListItem = ({ product }: ProductListItemProps) => {
-	return (
-		<li>
-			<article>
-				<ProductCoverImage src={product.coverImage.src} alt={product.coverImage.alt} />
-				<ProductListItemDescription product={product} />
-			</article>
-		</li>
-	);
-};
+export const ProductListItem = ({ product }: ProductListItemProps) => (
+	<li>
+		<article>
+			<ProductCoverImage product={product} />
+			<ProductDescription product={product} />
+		</article>
+	</li>
+);

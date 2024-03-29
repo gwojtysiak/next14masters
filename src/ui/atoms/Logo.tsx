@@ -1,0 +1,1 @@
+export const Logo = () => <img className="object-cover" src="/next.svg" width={36} alt="logo" />;

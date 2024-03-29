@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Footer } from "@/ui/organisms/Footer";
+import { Header } from "@/ui/organisms/Header";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,12 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <section className="mx-auto p-12">
+        <Header />
+        <main className="mx-auto max-w-7xl m-8 p-8">
           {children}
-        </section>
-        <footer>
-          <p className="text-center text-sm text-gray-500">@ 2024</p>
-        </footer>
+        </main>
+        <Footer />
       </body>
     </html>
   );
