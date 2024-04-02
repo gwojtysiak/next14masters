@@ -2,6 +2,7 @@ import { type Metadata } from "next";
 import { Suspense } from "react";
 import { getProductById } from "@/api/product";
 import { ProductItem } from "@/ui/molecules/ProductItem";
+import { Spinner } from "@/ui/atoms/Spinner";
 
 type Params = {
 	params: {
@@ -33,7 +34,7 @@ export default async function ProductPage({ params }: Params) {
 	const productItem = await getProductById(params.id);
 	return (
 		<section className="md:mx-24">
-			<Suspense fallback="Loading....">
+			<Suspense fallback={<Spinner />}>
 				<ProductItem product={productItem} />
 			</Suspense>
 		</section>
